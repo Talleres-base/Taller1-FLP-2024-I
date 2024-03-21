@@ -116,37 +116,37 @@ El estudiante aprenderá a representar TADs con listas
 ;;Funciones
 
 (define get-nodes
-  (lambda ()
+  (lambda (g)
     0
   )
 )
 
 (define get-edges
-  (lambda ()
+  (lambda (g)
     0
   )
 )
 
 (define get-adjacent
-  (lambda (u)
+  (lambda (g u)
     0
   )
 )
 
 (define get-incidents
-  (lambda (u)
+  (lambda (g u)
     0
   )
 )
 
 (define get-minimum-tree
-  (lambda (u)
+  (lambda (g)
     0
   )
 )
 
 (define get-distance
-  (lambda (u v)
+  (lambda (g u v)
     0
   )
 )
