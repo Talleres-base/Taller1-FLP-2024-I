@@ -36,25 +36,25 @@ El estudiante aprenderá a representar TADs con listas
 ;Predicados
 
 (define empty-graph?
-  (lambda ()
+  (lambda (g)
     #T
   )
 )
 
 (define non-empty-graph?
-  (lambda ()
+  (lambda (g)
     #T
   )
 )
 
 (define node-int?
-  (lambda ()
+  (lambda (n)
     #T
   )
 )
 
 (define node-symbol?
-  (lambda ()
+  (lambda (n)
     #T
   )
 )
@@ -62,32 +62,38 @@ El estudiante aprenderá a representar TADs con listas
 ;;Extractores
 
 (define non-empty-graph->u
-  (lambda ()
+  (lambda (g)
     0
   )
 )
 
 (define non-empty-graph->v
-  (lambda ()
+  (lambda (g)
     0
   )
 )
 
 (define non-empty-graph->g
-  (lambda ()
+  (lambda (g)
+    0
+  )
+)
+
+(define non-empty-graph->w
+  (lambda (g)
     0
   )
 )
 
 
 (define node-int->datum
-  (lambda ()
+  (lambda (n)
     0
   )
 )
 
 (define node-sym->datum
-  (lambda ()
+  (lambda (n)
     0
   )
 )
