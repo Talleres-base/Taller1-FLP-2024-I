@@ -133,18 +133,6 @@ El estudiante aprenderá a representar TADs con procedimientos
   )
 )
 
-(define get-incidents
-  (lambda (g u)
-    0
-  )
-)
-
-(define get-minimum-tree
-  (lambda (g)
-    0
-  )
-)
-
 (define get-distance
   (lambda (g u v)
     0
