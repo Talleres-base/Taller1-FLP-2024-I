@@ -1,7 +1,8 @@
 #!/bin/bash
 
 par=$1
-result=$(racket "work-test-p"$par".rkt" 2>&1 > /dev/null)
+tipo=$2
+result=$(racket "tests/test"$par"_"$tipo".rkt" 2>&1 > /dev/null)
 if [ -z "$result" ]
 then
   echo "Test succeeded"
