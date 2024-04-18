@@ -1,49 +1,19 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/smsYUmot)
-# Taller de ejemplo
+# Taller 1 FLP
+## Abstracción de datos
 
-## Ejercicios
+Ejecutar las pruebas así desde Git Bash o Linux, asegurse que el directorio del Dr Racket, archivo racket.exe (Windows) o /<carpeta>/bin/racket esté en el PATH.
 
-### Ejercicio 1
-
-(list-set lista n x) que retorna una lista similar a lista, reemplazando el n-simo elemento
-(indexado desde cero) con x.
-```racket
-(list-set '(a b c d) 2 '(1 2))
-;Retorna '(a b (1 2) d)
-
-(list-set '(a b c d) 3 '(1 5 10))
-;Retorna '(a b c (1 5 10))
+```bash 
+sh test.sh 1 listas
+sh test.sh 2 listas
+sh test.sh 3 listas
+sh test.sh 4 listas
+sh test.sh 1 proc
+sh test.sh 2 proc
+sh test.sh 3 proc
+sh test.sh 4 proc
+sh test.sh 1 datatype
+sh test.sh 2 datatype
+sh test.sh 3 datatype
+sh test.sh 4 datatype
 ```
-
-### Ejercicio 2
-
-(list-tails lista) que recibe como parámetro una lista y retorna una lista de todas las sublistas
-de elementos consecutivos en lista.
-
-```racket
-(list-tails '(1 2 3 4 5))
-;Retorna ((1 2 3 4 5) (2 3 4 5) (3 4 5) (4 5) (5))
-(list-tails '(1 a (e 4) 5 v))
-;Retorna '((1 a (e 4) 5 v) (a (e 4) 5 v) ((e 4) 5 v) (5 v) (v))
-```
-### Ejercicio 3
-
-(repeat-list lista n) recibe una lista y retorna una lista con todos los elementos repetidos n veces en listas internas
-
-```racket
-(repeat-list '(1 2 3) 3)
-;Retorna '((1 1 1) (2 2 2) (3 3 3))
-(repeat-list '(1 (2 3) 3 4 (1 2)) 2)
-;Retorna '((1 1) ((2 3) (2 3)) (3 3) (4 4) ((1 2) (1 2)) )
-```
-
-### Ejercicio 4
-(list-facts n) recibe un número entero positivo n y retorna los factoriales desde 0! hasta n!
-
-```racket
-(list-facts 5)
-;Retorna '(1 1 2 6 24 120)
-```
-
-
-
