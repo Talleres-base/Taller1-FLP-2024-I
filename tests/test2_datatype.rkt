@@ -1,5 +1,5 @@
 #lang racket/base
-
+(require eopl)
 (require rackunit "../taller1-datatype.rkt" "graphs.rkt")
 
 (define graphs (load-graphs non-empty-graph empty-graph node-int node-symbol))
@@ -14,17 +14,11 @@ Funcion sumar pesos
 
 (define sumar-pesos
   (lambda (g [acc 0])
-    (cond
-      [(empty-graph? g) acc]
-      [(non-empty-graph? g)
-        (let
-          (
-            (w (non-empty-graph->w g))
-          )
-          (sumar-pesos (non-empty-graph->g g) (+ acc w))
-        )
-      ]
-      [else (check-eq? #T #F)]
+    (cases graph g
+      (empty-graph () acc)
+      (non-empty-graph (u v w go)
+          (sumar-pesos go (+ acc w))
+      )
     )
   )
 )
