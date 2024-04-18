@@ -1,6 +1,6 @@
 #lang racket/base
 
-(require rackunit "../taller1-listas.rkt" "graphs.rkt")
+(require rackunit "../taller1-proc.rkt" "graphs.rkt")
 
 (define graphs (load-graphs non-empty-graph empty-graph node-int node-symbol))
 (define g1 (car graphs))
@@ -9,10 +9,10 @@
 
 
 #|
-Son listas Constructores
+Son listas Procedmientos
 |#
 
-(check-eq? #T (and (pair? g1) (pair? g2) (pair? g3)))
+(check-eq? #T (and (procedure? g1) (procedure? g2) (procedure? g3)))
 
 #|
 No hay repetidos

@@ -6,90 +6,55 @@
 - Asegurarse que el archivo se almacena como texto plano
 
 Adquiriendo el poder de la abstracción
-El estudiante aprenderá a representar TADs con procedimientos 
+El estudiante aprenderá a representar TADs con procedimientos
 |#
 
 ;Constructores
 (define empty-graph
-  (lambda () 0)
 )
 
 (define non-empty-graph
-  (lambda (u v w g)
-    0
-  )
 )
 
 (define node-int
-  (lambda (datum)
-    0
-  )
 )
 
 (define node-symbol
-  (lambda (datum)
-    0
-  )
 )
 ;Observadores
 
 ;Predicados
 
 (define empty-graph?
-  (lambda ()
-    #T
-  )
 )
 
 (define non-empty-graph?
-  (lambda ()
-    #T
-  )
-)
 
 (define node-int?
-  (lambda ()
-    #T
-  )
 )
 
 (define node-symbol?
-  (lambda ()
-    #T
-  )
 )
 
 ;;Extractores
 
 (define non-empty-graph->u
-  (lambda ()
-    0
-  )
 )
 
 (define non-empty-graph->v
-  (lambda ()
-    0
-  )
 )
+
+(define non-empty-graph->w
+)
+
 
 (define non-empty-graph->g
-  (lambda ()
-    0
-  )
 )
 
-
 (define node-int->datum
-  (lambda ()
-    0
-  )
 )
 
 (define node-sym->datum
-  (lambda ()
-    0
-  )
 )
 
 ;; Ejemplo
@@ -116,27 +81,12 @@ El estudiante aprenderá a representar TADs con procedimientos
 ;;Funciones
 
 (define get-nodes
-  (lambda (g)
-    0
-  )
 )
 
 (define get-edges
-  (lambda (g)
-    0
-  )
 )
 
 (define get-adjacent
-  (lambda (g u)
-    0
-  )
-)
-
-(define get-distance
-  (lambda (g u v)
-    0
-  )
 )
 
 
@@ -145,4 +95,3 @@ No tocar
 Exporar funciones
 |#
 (provide (all-defined-out))         
-

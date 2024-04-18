@@ -1,48 +1,50 @@
+
 #lang eopl
+
 #|
 - No insertar comentarios con caja
 - No insertar imágenes
 - Asegurarse que el archivo se almacena como texto plano
 
 Adquiriendo el poder de la abstracción
-El estudiante aprenderá a representar TADs con procedimientos 
+El estudiante aprenderá a representar TADs con datatypes
 |#
-
-
 (define-datatype graph graph?
-  (variantGraph)
 )
 
 (define-datatype node node?
-(variantNode)
 )
 
+;; Ejemplo
+
+(define grafo1
+  (non-empty-graph
+    (node-symbol 'b)
+    (node-int 1)
+    5
+    (non-empty-graph
+      (node-symbol 'b)
+      (node-int 2)
+      10
+      (non-empty-graph
+        (node-int 1)
+        (node-int 2)
+        15
+        (empty-graph)
+        )
+      )
+    )
+  )
 
 ;;Funciones
 
 (define get-nodes
-  (lambda (g)
-    0
-  )
 )
 
 (define get-edges
-  (lambda (g)
-    0
-  )
 )
 
 (define get-adjacent
-  (lambda (g u)
-    0
-  )
-)
-
-
-(define get-distance
-  (lambda (g u v)
-    0
-  )
 )
 
 
