@@ -12,7 +12,7 @@
   (lambda (x l)
     (cond
       [(null? l) #F]
-      [(equal? x (car l)) #T]
+      [(comparar? x (car l)) #T]
       [else (member x (cdr l))]
     )
   )
@@ -22,12 +22,26 @@
   (lambda (x l)
     (cond
       [(null? l) l]
-      [(equal? (car l) x) (cdr l)]
+      [(comparar? (car l) x) (cdr l)]
       [else (cons (car l) (remove-first (x (cdr l))))]
     )
   )
 )
 
+(define comparar?
+  (lambda (x y)
+    (cond
+      [(and (list? x) (list? y))
+       (and
+        (comparar? (car x) (car y))
+        (comparar? (cadr x) (cadr y))
+        (equal? (caddr x) (caddr y)))]
+      [(and (node-int? x)(node-int? y)) (equal? (node-int->datum x) (node-int->datum y))]
+      [(and (node-symbol? x)(node-symbol? y)) (equal? (node-symbol->datum x) (node-symbol->datum y))]
+      [else #F]
+    )
+  )
+)
 
 (define verify
   (lambda (l1 l2)

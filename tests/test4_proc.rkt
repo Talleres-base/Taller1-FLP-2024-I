@@ -1,5 +1,4 @@
-#lang racket/base
-
+#lang eopl
 (require rackunit "../taller1-proc.rkt" "graphs.rkt")
 
 (define graphs (load-graphs non-empty-graph empty-graph node-int node-symbol))
@@ -12,7 +11,7 @@
   (lambda (x l)
     (cond
       [(null? l) #F]
-      [(equal? x (car l)) #T]
+      [(comparar? x (car l)) #T]
       [else (member x (cdr l))]
     )
   )
@@ -22,23 +21,37 @@
   (lambda (x l)
     (cond
       [(null? l) l]
-      [(equal? (car l) x) (cdr l)]
-      [else (cons (car l) (remove-first x (cdr l)))]
+      [(comparar? (car l) x) (cdr l)]
+      [else (cons (car l) (remove-first (x (cdr l))))]
     )
   )
 )
 
-
-(define verify
-  (lambda (l1 l2)
+(define comparar?
+  (lambda (x y)
     (cond
-      [(and (null? l1) (null? l2)) #T]
-      [(or (null? l1) (null? l2)) #F]
-      [(member (car l1) l2) (verify (cdr l1) (remove-first (car l1) l2))]
+      [(and (list? x) (list? y))
+       (and
+        (comparar? (car x) (car y))
+        (comparar? (cadr x) (cadr y))
+        (equal? (caddr x) (caddr y)))]
+      [(and (node-int? x)(node-int? y)) (equal? (node-int->datum x) (node-int->datum y))]
+      [(and (node-symbol? x)(node-symbol? y)) (equal? (node-symbol->datum x) (node-symbol->datum y))]
       [else #F]
     )
   )
 )
+
+(define verify
+  (lambda (l1 l2)
+    (cond
+      [(null? l1) #T]
+      [(member (car l1) l2) (verify (cdr l1) l2)]
+      [else #F]
+    )
+  )
+)
+
 #|
 Adjacencia
 |#
