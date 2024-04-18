@@ -55,7 +55,7 @@ El estudiante aprenderá a representar TADs con listas
 (define node-int->datum
 )
 
-(define node-sym->datum
+(define node-symbol->datum
 )
 
 ;; Ejemplo
